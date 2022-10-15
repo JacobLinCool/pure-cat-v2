@@ -1,0 +1,23 @@
+{
+    "name": "pure-cat",
+    "version": "1.0.0-alpha.6",
+    "description": "",
+    "keywords": [],
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup"
+    },
+    "dependencies": {
+        "debug": "^4.3.4",
+        "discord.js": "^14.4.0",
+        "dotenv": "^16.0.2",
+        "dotenv-expand": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/debug": "^4.1.7",
+        "tsup": "^6.2.3"
+    }
+}

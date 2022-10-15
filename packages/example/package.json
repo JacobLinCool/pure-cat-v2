@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "name": "example",
+    "version": "0.1.0",
+    "description": "",
+    "keywords": [],
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsup",
+        "start": "node dist/index.js"
+    },
+    "dependencies": {
+        "discord.js": "^14.4.0",
+        "pure-cat": "workspace:*",
+        "pure-cat-store-file": "workspace:*",
+        "pure-cat-store-mongo": "workspace:*",
+        "pure-cat-module-subscription": "workspace:*",
+        "pure-cat-module-suggestion": "workspace:*",
+        "pure-cat-module-i18n": "workspace:*",
+        "pure-cat-module-echo": "workspace:*",
+        "pure-cat-module-ignore": "workspace:*",
+        "pure-cat-module-ping": "workspace:*",
+        "pure-cat-module-terminal": "workspace:*",
+        "pure-cat-module-timing": "workspace:*",
+        "pure-cat-module-wc": "workspace:*"
+    },
+    "devDependencies": {
+        "tsup": "^6.2.3"
+    }
+}

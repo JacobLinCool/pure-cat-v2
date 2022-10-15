@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    image: jacoblincool/pure-cat:dev
+    container_name: pure-cat-dev
+    command: sleep infinity
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: mongo:latest
+    container_name: pure-cat-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - db-storage:/data/db
+  prod:
+    build:
+      context: .
+      target: prod
+    image: jacoblincool/pure-cat:latest
+    container_name: pure-cat
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+volumes:
+  db-storage: {}

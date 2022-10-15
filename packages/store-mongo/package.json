@@ -1,0 +1,23 @@
+{
+    "name": "pure-cat-store-mongo",
+    "version": "1.0.0-alpha.6",
+    "description": "Pure Cat MongoDB Store Adapter",
+    "keywords": [],
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup"
+    },
+    "dependencies": {
+        "debug": "^4.3.4",
+        "discord.js": "^14.4.0",
+        "mongodb": "^4.10.0",
+        "pure-cat": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/debug": "^4.1.7",
+        "tsup": "^6.2.3"
+    }
+}

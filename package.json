@@ -1,0 +1,40 @@
+{
+    "private": true,
+    "name": "pure-cat-monorepo",
+    "description": "A Modular Discord Bot (Framework).",
+    "scripts": {
+        "start": "pnpm -r --filter=./packages/* run start",
+        "register": "pnpm -r --filter=./packages/* run register",
+        "test": "pnpm -r --filter=./packages/* run test",
+        "dev": "docker compose up -d dev && docker compose exec -it dev bash",
+        "build": "pnpm -r --filter=./packages/* run build",
+        "docs": "pnpm -r --filter=./packages/* run docs && esno scripts/docs.ts",
+        "format": "prettier --write '**/*.{js,ts,jsx,tsx,json,yml,yaml,md,html}' --ignore-path .gitignore",
+        "lint": "eslint --env-info --fix .",
+        "docker:load": "touch .env && docker buildx bake --load",
+        "docker:push": "touch .env && docker buildx bake --push --set '*.platform=linux/arm64,linux/amd64'",
+        "docker:up": "docker compose up -d"
+    },
+    "keywords": [],
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^28.1.8",
+        "@types/node": "^18.7.20",
+        "@types/node-fetch": "^2.6.2",
+        "@types/serve-handler": "^6.1.1",
+        "@typescript-eslint/eslint-plugin": "^5.38.0",
+        "@typescript-eslint/parser": "^5.38.0",
+        "eslint": "^8.24.0",
+        "eslint-config-prettier": "^8.5.0",
+        "esno": "^0.16.3",
+        "jest": "^28.1.3",
+        "node-fetch": "^2.6.7",
+        "prettier": "^2.7.1",
+        "serve-handler": "^6.1.3",
+        "ts-jest": "^28.0.8",
+        "tsup": "^6.2.3",
+        "typedoc": "^0.23.15",
+        "typescript": "^4.8.3"
+    }
+}
