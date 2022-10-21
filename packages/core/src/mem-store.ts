@@ -129,8 +129,7 @@ export function id_resolver(args: ClientEvents[keyof ClientEvents]): {
             }
 
             if (arg.user?.id) {
-                // @ts-expect-error member is not defined in APIInteractionGuildMember
-                result.member = arg.user.id;
+                result.user = arg.user.id;
             }
         } else if (arg instanceof Guild) {
             result.guild = arg.id;
@@ -154,7 +153,12 @@ export function id_resolver(args: ClientEvents[keyof ClientEvents]): {
                 result.channel = arg.channel.id;
             }
             // @ts-expect-error generic type call
-            if (arg?.member) {
+            if (arg?.user) {
+                // @ts-expect-error generic type call
+                result.user = arg.user.id;
+            }
+            // @ts-expect-error generic type call
+            else if (arg?.member) {
                 // @ts-expect-error generic type call
                 result.user = arg.member.id;
             }
