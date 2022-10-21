@@ -12,21 +12,20 @@
         "start": "node dist/index.js"
     },
     "dependencies": {
-        "discord.js": "^14.4.0",
+        "discord.js": "^14.6.0",
         "pure-cat": "workspace:*",
-        "pure-cat-store-file": "workspace:*",
-        "pure-cat-store-mongo": "workspace:*",
-        "pure-cat-module-subscription": "workspace:*",
-        "pure-cat-module-suggestion": "workspace:*",
-        "pure-cat-module-i18n": "workspace:*",
         "pure-cat-module-echo": "workspace:*",
+        "pure-cat-module-i18n": "workspace:*",
         "pure-cat-module-ignore": "workspace:*",
         "pure-cat-module-ping": "workspace:*",
+        "pure-cat-module-subscription": "workspace:*",
         "pure-cat-module-terminal": "workspace:*",
         "pure-cat-module-timing": "workspace:*",
-        "pure-cat-module-wc": "workspace:*"
+        "pure-cat-module-wc": "workspace:*",
+        "pure-cat-store-file": "workspace:*",
+        "pure-cat-store-mongo": "workspace:*"
     },
     "devDependencies": {
-        "tsup": "^6.2.3"
+        "tsup": "^6.3.0"
     }
 }

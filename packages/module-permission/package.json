@@ -12,10 +12,10 @@
         "build": "tsup"
     },
     "dependencies": {
-        "discord.js": "^14.4.0",
+        "discord.js": "^14.6.0",
         "pure-cat": "workspace:*"
     },
     "devDependencies": {
-        "tsup": "^6.2.3"
+        "tsup": "^6.3.0"
     }
 }

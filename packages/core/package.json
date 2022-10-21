@@ -12,12 +12,12 @@
     },
     "dependencies": {
         "debug": "^4.3.4",
-        "discord.js": "^14.4.0",
-        "dotenv": "^16.0.2",
+        "discord.js": "^14.6.0",
+        "dotenv": "^16.0.3",
         "dotenv-expand": "^9.0.0"
     },
     "devDependencies": {
         "@types/debug": "^4.1.7",
-        "tsup": "^6.2.3"
+        "tsup": "^6.3.0"
     }
 }
