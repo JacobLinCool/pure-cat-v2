@@ -1,6 +1,13 @@
 import EventEmitter from "node:events";
 import Debug from "debug";
-import { Client, GatewayIntentBits, Partials, Events, ClientEvents } from "discord.js";
+import {
+    Client,
+    GatewayIntentBits,
+    Partials,
+    Events,
+    ClientEvents,
+    IntentsBitField,
+} from "discord.js";
 import { BotConfig, Module } from "./types";
 import { load_env_recursively } from "./utils";
 import { MemStore } from "./mem-store";
@@ -59,14 +66,19 @@ export class Bot extends EventEmitter {
      * @returns
      */
     async start(token?: string): Promise<void> {
-        this.client.options.intents = [
-            ...new Set(this.modules.flatMap((module) => module.intents ?? [])),
-        ];
+        const intents = new IntentsBitField();
+        for (const module of this.modules) {
+            if (module.intents) {
+                intents.add(module.intents);
+            }
+        }
+        this.client.options.intents = intents;
         debug(
-            `intents: ${this.client.options.intents.map((intent) =>
-                typeof intent === "string"
-                    ? intent
-                    : GatewayIntentBits[intent as GatewayIntentBits] || intent,
+            `intents: ${[...new Set(this.modules.flatMap((module) => module.intents ?? []))].map(
+                (intent) =>
+                    typeof intent === "string"
+                        ? intent
+                        : GatewayIntentBits[intent as GatewayIntentBits] || intent,
             )}`,
         );
 
